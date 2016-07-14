@@ -11,5 +11,10 @@ Until we deploy a PyPi package, you will need to take care of prerequisites, whi
 * [Selenium2Library](https://github.com/axon-id/Selenium2Library "Selenium2Library on GitHub")
 * [Selenium WebDriver](https://github.com/SeleniumHQ/selenium/tree/master/py "Selenium for Python on GitHub")
 
-## Features
+Long story short, you can run the following command (if you have [pip](https://pip.pypa.io/en/stable/ "Python pip documentation") installed).
+```
+pip install robotframework-selenium2library
+```
+
+## Documentation
 The complete documentation of new keywords can be found [here](https://axon-id.github.io/Selenium2LibraryExtension/ "S2LExp keywords documentation"). The library also features a fix to a logic error in the _wait until_ family keywords, where it didn't handle exceptions (resulting in keywords sometimes failing even if their timeout hadn't been reached). The patch can be seen in [/patches](https://github.com/axon-id/Selenium2LibraryExtension/tree/master/Library/patches "Patches directory")
