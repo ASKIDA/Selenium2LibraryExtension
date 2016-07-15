@@ -1,4 +1,5 @@
 *** Settings ***
+Documentation     Unit tests for the keyword *Element Text Color Should Be*
 Test Setup        Open Browser    https://axon-id.github.io/Selenium2LibraryExtension/test.html    gc
 Test Teardown     Close Browser
 Library           ../Library/Selenium2LibraryExtension.py

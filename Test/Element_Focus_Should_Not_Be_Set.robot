@@ -1,4 +1,5 @@
 *** Settings ***
+Documentation     Unit tests for the keyword *Element Focus Should Not Be Set*
 Test Setup        Open Browser    https://axon-id.github.io/Selenium2LibraryExtension/test.html    gc
 Test Teardown     Close Browser
 Library           ../Library/Selenium2LibraryExtension.py

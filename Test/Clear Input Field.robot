@@ -1,4 +1,5 @@
 *** Settings ***
+Documentation     Unit tests for the keyword *Clear Input Field*
 Test Setup        Open Browser    https://axon-id.github.io/Selenium2LibraryExtension/test.html    gc
 Test Teardown     Close Browser
 Library           ../Library/Selenium2LibraryExtension.py
@@ -6,30 +7,30 @@ Resource          res/vars.robot
 
 *** Test Cases ***
 Method 0
-    [Documentation]    Ce test utilise sa méthode 0 et vide le champs identifié par input_01. Il vérifie par la suite que ce que contient le champs équivaut à une donnée vide. Cette méthode (0) utilise element.clear de Selenium.
+    [Documentation]    This test uses the method 0 of Clear Input Field to clear the input field input_01. It then ensures it's empty using Get Value
     [Tags]    Clear Input Field
     Clear Input Field    id=input_01    0
     ${value}=    Get Value    id=input_01
     Should Be Equal As Strings    ${value}    ${EMPTY}
 
 Method 1
-    [Documentation]    Ce test utilise sa méthode 1 et vide le champs identifié par input_01. Il vérifie par la suite que ce que contient le champs équivaut à une donnée vide. Cette méthode (1) s'assure de vider le champs en mettant tout d'abord le focus puis en pesant ensuite CTRL + A puis la touche Supprimer.
+    [Documentation]    This test uses the method 1 of Clear Input Field to clear the input field input_01. It then ensures it's empty using Get Value
     Clear Input Field    id=input_01    1
     ${value}=    Get Value    id=input_01
     Should Be Equal As Strings    ${value}    ${EMPTY}
 
 Method 2
-    [Documentation]    Ce test utilise sa méthode 2 et vide le champs identifié par input_01. Il vérifie par la suite que ce que contient le champs équivaut à une donnée vide Cette méthode (2) supprime en pesant de manière répétitive sur la touche Supprimer jusqu'à ce que le champ soit vide.
+    [Documentation]    This test uses the method 2 of Clear Input Field to clear the input field input_01. It then ensures it's empty using Get Value
     Clear Input Field    id=input_01    2
     ${value}=    Get Value    id=input_01
     Should Be Equal As Strings    ${value}    ${EMPTY}
 
 Clear Invalid Element
-    [Documentation]    Ce test s'assure que le keyword lance un message d'erreur si le champ à vider n'est pas valide.
+    [Documentation]    This test attempts to clear an invalid element and ensures an error is thrown
     ${ErrorMsg}=    Run Keyword And Expect Error    *    Clear Input Field    id=div_01
     Should Contain    ${ErrorMsg}    InvalidElementStateException
 
 Clear Read Only Field
-    [Documentation]    Ce test s'assure que le keyword lance un message d'erreur si le champ à vider n'est pas un champ.
+    [Documentation]    This test attempts to clear a read-only input field and ensures it throws an error
     ${ErrorMsg}=    Run Keyword And Expect Error    *    Clear Input Field    id=input_03
     Should Contain    ${ErrorMsg}    InvalidElementStateException

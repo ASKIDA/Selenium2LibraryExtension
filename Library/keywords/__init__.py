@@ -575,7 +575,7 @@ class _keywords():
 			element = self._element_find(locator, True, False)
 			if element is not None: return
 			
-		return "Couldn't find any of the expected elements from '%s'" % locators
+		return "Couldn't find any of the expected elements from '%s'" % str(locators)
 	
 	##################################################################
 	## Simpler implementation of Wait Until Page Contains Element	##

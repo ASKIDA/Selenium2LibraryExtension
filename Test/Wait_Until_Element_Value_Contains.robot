@@ -1,4 +1,5 @@
 *** Settings ***
+Documentation     Unit tests for the keyword *Wait Until Element Value Contains*
 Test Setup        Open Browser    https://axon-id.github.io/Selenium2LibraryExtension/test.html    gc
 Test Teardown     Close Browser
 Library           ../Library/Selenium2LibraryExtension.py
