@@ -116,7 +116,7 @@ class _keywords():
 
 		0 = Uses the selenium method by doing element.clear \n
 		1 = Sets focus on the field and presses CTRL + A, and then DELETE \n
-		2 = Repeatedly presses DELETE
+		2 = Repeatedly presses BACKSPACE until the field is empty
 
 		This keyword, when using a method other than '2' does not validate it
 		successfully cleared the field, you should handle this verification by yourself.
@@ -141,10 +141,10 @@ class _keywords():
 
 		elif (int(method) == 2):
 
-			self._info("Attempting to clear input on element '%s' by repeatedly pressing DELETE" % (locator))
-			while (len(element.get_attribute('value').strip()) != 0):
+			self._info("Attempting to clear input on element '%s' by repeatedly pressing BACKSPACE" % (locator))
+			while (len(element.get_attribute('value')) != 0):
 
-				element.send_keys(Keys.DELETE)
+				element.send_keys(Keys.BACKSPACE)
 
 		else: element.clear()
 
