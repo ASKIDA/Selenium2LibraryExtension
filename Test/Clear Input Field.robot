@@ -1,7 +1,7 @@
 *** Settings ***
-Test Setup        Open Browser    https://dl.dropboxusercontent.com/u/74099577/Axon/S2LExp/index.html    gc
+Test Setup        Open Browser    https://axon-id.github.io/Selenium2LibraryExtension/test.html    gc
 Test Teardown     Close Browser
-Library           ../Library/S2LExp.py
+Library           ../Library/Selenium2LibraryExtension.py
 Resource          res/vars.robot
 
 *** Test Cases ***
@@ -20,8 +20,6 @@ Method 1
 
 Method 2
     [Documentation]    Ce test utilise sa méthode 2 et vide le champs identifié par input_01. Il vérifie par la suite que ce que contient le champs équivaut à une donnée vide Cette méthode (2) supprime en pesant de manière répétitive sur la touche Supprimer jusqu'à ce que le champ soit vide.
-    Set Element Focus    id=input_01
-    Tap Key    ${VK_UP}    ${VK_CTRL}
     Clear Input Field    id=input_01    2
     ${value}=    Get Value    id=input_01
     Should Be Equal As Strings    ${value}    ${EMPTY}

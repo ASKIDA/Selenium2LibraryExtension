@@ -1,8 +1,8 @@
 *** Settings ***
 Suite Setup
-Test Setup        Open Browser    https://dl.dropboxusercontent.com/u/74099577/Axon/S2LExp/index.html    gc
+Test Setup        Open Browser    https://axon-id.github.io/Selenium2LibraryExtension/test.html    gc
 Test Teardown     Close Browser
-Library           ../Library/S2LExp.py
+Library           ../Library/Selenium2LibraryExtension.py
 Resource          res/vars.robot
 
 *** Test Cases ***
