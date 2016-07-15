@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+	
+		<title>S2LExp - Unit Testing</title>
+		<meta name="language" content="English">
+		<meta charset="UTF-8">
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+		<script src="jquery.hotkeys.js"></script>
+	
+	</head>
+	
+	<body>
+	
+		<input id="input_01" type="text" value="Hello World" /><br /><br />
+		<input id="input_02" type="text" value="Hello New World" /><br /><br />
+		<input id="input_03" type="text" value="Hello Brand New World" readonly="readonly" /><br /><br />
+		
+		<div id="div_01" style="width: 250px; height: 250px; background-color: #FF0000; color: #FFFFFF; border: 2px solid #000000;"><span id="span_01">Goodbye World</span></div><br /><br />
+		
+		<p id="First_Paragraph">Hello! I'm the first paragraph</p>
+		<p id="Second_Paragraph">Hello!</p>
+		<p id="Third_Paragraph">Hello!</p>
+		<p id="Fourth_Paragraph">Hello!</p>
+		<p id="Last_Paragraph">Hello! I'm the last paragraph</p>
+		
+		<br /><br />
+		
+		<div id="div_container">
+		
+		</div>
+		
+		<script>
+		
+			window.setInterval(create_button, 5000)
+			
+			function change_document()
+			{
+				document.write('<div id="div_02" style="width: 500px; height: 500px; background-color: #000000; color: #008000;">Hello World</div>');
+			}
+			
+			function create_button()
+			{
+				if (document.getElementById('button_01'))
+					return false;
+			
+				var container = document.getElementById('div_container');
+				container.innerHTML = '<button id="button_01" onclick="change_document();">Click Me Senpai</button>';
+			}
+			
+			$(document).bind('keydown', "F1", function ()
+			{
+				change_document();
+				return false;
+			});
+		
+		</script>
+	
+	</body>
+
+</html>
