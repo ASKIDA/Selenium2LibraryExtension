@@ -2,3 +2,5 @@
 setup.cfg
 setup.py
 Selenium2LibraryExtension\__init__.py
+Selenium2LibraryExtension\keywords\__init__.py
+Selenium2LibraryExtension\patches\__init__.py
