@@ -15,4 +15,4 @@ python setup.py install
 ```
 
 ## Documentation
-The complete documentation of new keywords can be found [here](https://axon-id.github.io/Selenium2LibraryExtension/ "S2LExp keywords documentation"). The library also features a fix to a logic error in the _wait until_ family keywords, where it didn't handle exceptions (resulting in keywords sometimes failing even if their timeout hadn't been reached). The patch can be seen in [/patches](https://github.com/axon-id/Selenium2LibraryExtension/tree/master/Library/patches "Patches directory")
+The complete documentation of new keywords can be found [here](https://axon-id.github.io/Selenium2LibraryExtension/ "S2LExt keywords documentation"). The library also features a fix to a logic error in the _wait until_ family keywords, where it didn't handle exceptions (resulting in keywords sometimes failing even if their timeout hadn't been reached). The patch can be seen in [/patches](https://github.com/axon-id/Selenium2LibraryExtension/tree/master/src/Selenium2LibraryExtension/patches "Patches directory")
