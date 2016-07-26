@@ -14,5 +14,8 @@ Or if you prefer to install from source
 python setup.py install
 ```
 
+## Importing
+For informations on how to import a library into your Robot Framework project, see the [user guide](http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#using-test-libraries "Robot Framework User Guide). You do not need to import Selenium2Library, it is imported from within Selenium2LibraryExtension already.
+
 ## Documentation
 The complete documentation of new keywords can be found [here](https://axon-id.github.io/Selenium2LibraryExtension/ "S2LExt keywords documentation"). The library also features a fix to a logic error in the _wait until_ family keywords, where it didn't handle exceptions (resulting in keywords sometimes failing even if their timeout hadn't been reached). The patch can be seen in [/patches](https://github.com/axon-id/Selenium2LibraryExtension/tree/master/src/Selenium2LibraryExtension/patches "Patches directory")
