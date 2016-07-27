@@ -6,6 +6,10 @@ from Selenium2Library import Selenium2Library
 
 class _patches():
 
+	def __init__(self):
+	
+		pass
+
 	def _wait_until_exp(self, timeout, error, function, *args):
 		"""This replaces the method from Selenium2Library to fix the major logic error in it"""
 	

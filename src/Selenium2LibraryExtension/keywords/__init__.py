@@ -5,6 +5,10 @@ from selenium.webdriver.common.action_chains import ActionChains
 
 class _keywords():
 
+	def __init__(self):
+	
+		pass
+
 	##################################################################################################
 	## Wait Until Element Has Focus 																##
 	##																								##

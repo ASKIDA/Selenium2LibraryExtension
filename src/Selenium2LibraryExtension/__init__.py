@@ -25,7 +25,7 @@ class Selenium2LibraryExtension(Selenium2Library, _patches, _keywords):
 
 	ROBOT_LIBRARY_DOC_FORMAT = 'ROBOT'
 	ROBOT_LIBRARY_SCOPE = 'GLOBAL'
-	__version__ = '1.0.0'
+	__version__ = '1.0.2'
 
 	def __init__(self, timeout=10.0, implicit_wait=0.0, run_on_failure='Capture Page Screenshot', screenshot_root_directory=None):
 		"""Selenium2LibraryExtension can be imported with the same arguments as Selenium2Library. See the
