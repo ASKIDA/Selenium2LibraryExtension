@@ -95,12 +95,11 @@ class _keywords():
 		| *Argument* | *Description* | *Example* |
 		| locator | Selenium 2 element locator | id=my_id |"""
 
-		self._info("Attempting to set focus on element '%s'" % (locator))
+		self._info("Setting focus on element '%s'" % (locator))
 		
 		element = self._element_find(locator, True, True)
 		element.send_keys(Keys.NULL)
-		
-		self._info("Waiting for focus on '%s'" % (locator))
+
 		self._wait_until_no_error(None, self._check_element_focus, True, locator)
 
 	##################################################################################################
@@ -134,18 +133,18 @@ class _keywords():
 		
 		if (int(method) == 0):
 
-			self._info("Attempting to clear input on element '%s'" % (locator))
+			self._info("Clearing input on element '%s'" % (locator))
 			element.clear()
 
 		elif (int(method) == 1):
 
-			self._info("Attempting to clear input on element '%s' by pressing 'CTRL + A + DELETE'" % (locator))
+			self._info("Clearing input on element '%s' by pressing 'CTRL + A + DELETE'" % (locator))
 			element.send_keys(Keys.CONTROL + 'a')
 			element.send_keys(Keys.DELETE)
 
 		elif (int(method) == 2):
 
-			self._info("Attempting to clear input on element '%s' by repeatedly pressing BACKSPACE" % (locator))
+			self._info("Clearing input on element '%s' by repeatedly pressing BACKSPACE" % (locator))
 			while (len(element.get_attribute('value')) != 0):
 
 				element.send_keys(Keys.BACKSPACE)
@@ -271,15 +270,12 @@ class _keywords():
 		self._info("Verifying element '%s' value is not '%s'" % (locator, value))
 		
 		element = self._element_find(locator, True, True)
-		elem_value = str(element.get_attribute('value').encode('utf-8'))
+		elem_value = str(element.get_attribute('value'))
 
 		if (strip):
 			elem_value = elem_value.strip()
 		
-		if elem_value != value:
-			return
-			
-		else:
+		if elem_value == value:
 			raise AssertionError("Value was '%s' for element '%s' while it shouldn't have" % (elem_value, locator))
 
 	##################################################################################################
@@ -324,12 +320,9 @@ class _keywords():
 		element = self._element_find(locator, True, True)
 		elem_value = str(element.get_attribute('value'))
 		
-		if value not in elem_value:
-			return
-			
-		else:
+		if value in elem_value:
 			raise AssertionError("Value '%s' was found in element '%s' while it shouldn't have" % (value, locator))
-
+			
 	##################################################################################################
 	## Element Focus Should Be Set																	##
 	##																								##
