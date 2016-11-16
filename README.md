@@ -1,3 +1,5 @@
+[![Python 3 Support](https://img.shields.io/badge/Python_3.5-Yes-brightgreen.svg)]() [![Python 2.7 Support](https://img.shields.io/badge/Python_2.7-Yes-brightgreen.svg)]() [![Selenium 3 Support](https://img.shields.io/badge/Selenium 3-Yes-brightgreen.svg)]()
+
 # Selenium2LibraryExtension For Robot Framework
 
 ## Introduction
